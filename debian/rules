@@ -2,3 +2,8 @@
 
 %:
 	dh $@
+
+# fix lintian warning
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/pv/
+	rm debian/pv/usr/share/doc/pv/INSTALL

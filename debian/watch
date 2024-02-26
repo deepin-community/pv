@@ -1,0 +1,4 @@
+version=3
+opts="pgpsigurlmangle=s/$/.txt/" \
+https://www.ivarch.com/programs/pv.shtml \
+(?:|.*/)pv(?:[_\-]v?|)(\d[^\s/]*)\.(?:tar\.xz|txz|tar\.bz2|tbz2|tar\.gz|tgz)
