@@ -1,15 +1,27 @@
-Source: template-repository
-Section: unknown
+Source: pv
+Section: utils
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Antoine Beaupré <anarcat@debian.org>
+Uploaders: Thomas Ward <teward@ubuntu.com>
+Build-Depends:
+  debhelper-compat (=13)
+  , tmux
+  , valgrind-if-available [!mips64el !armhf]
+Standards-Version: 4.6.0.1
+Homepage: https://www.ivarch.com/programs/pv.shtml
+Vcs-Git: https://salsa.debian.org/debian/pv.git
+Vcs-Browser: https://salsa.debian.org/debian/pv
 
-Package: template-repository
+Package: pv
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Suggests: doc-base
+Description: Shell pipeline element to meter data passing through
+ pv (Pipe Viewer) can be inserted into any normal pipeline between two
+ processes to give a visual indication of how quickly data is passing through,
+ how long it has taken, how near to completion it is, and an estimate of how
+ long it will be until completion.
+ .
+ To use it, insert it in a pipeline between two processes, with the
+ appropriate options. Its standard input will be passed through to its
+ standard output and progress will be shown on standard error.
